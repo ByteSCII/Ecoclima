@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoClima Inicio</title>
+  <link rel="icon" href="./images/logo.ico" type="image/x-icon">
+  <meta name="description" content="EcoClima es una empresa líder en reparación y mantenimiento de aires acondicionados, ofreciendo servicios preventivos, predictivos y correctivos, además de asesoramiento experto para todas tus necesidades de climatización.">
+  <meta name="keywords" content="Ecoclima, reparación aires acondicionados, mantenimiento aires acondicionados, servicio técnico climatización, mantenimiento preventivo, mantenimiento predictivo, mantenimiento correctivo, asesoramiento climatización, aires acondicionados, climatización">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-image: url('./images/fondo.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center center;
+      
+      font-family: 'Inter', Arial, sans-serif;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    header {
+      width: 100%;
+      background-color: transparent;
+      padding-top: 0.5cm;
+      padding-bottom: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 100;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #004d40;
+      font-size: 14px;
+      font-weight: normal;
+      letter-spacing: normal;
+      transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      font-family: 'Montserrat', sans-serif;
+      
+      background-image: none;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+      height: auto;
+      width: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: #009688;
+      transform: translateY(-2px);
+    }
+
+    .nav-link:active {
+      transform: translateY(1px);
+    }
+
+    .nav-link::after {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 27.802 206.816 85.578' preserveAspectRatio='xMidYMid meet' xmlns='http://www.w3.org/2000/svg'><path fill='%23000000' d='M188.97,27.802H17.847C8.006,27.802,0,35.815,0,45.666v49.852c0,9.851,8.006,17.864,17.847,17.864H188.97c9.841,0,17.846-8.013,17.846-17.864V45.666C206.817,35.815,198.811,27.802,188.97,27.802z M199.685,95.518c0,5.916-4.806,10.732-10.715,10.732H17.847c-5.909,0-10.715-4.816-10.715-10.732V45.666c0-5.916,4.806-10.732,10.715-10.732H188.97c5.909,0,10.715,4.816,10.715,10.732V95.518z'/><rect x='35.658' y='88.421' width='131.987' height='7.132' fill='%23009688'/><rect x='21.395' y='77.724' width='164.027' height='7.132' fill='%23009688'/></svg>");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 8px;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .say-hello {
+      border: 2px solid #009688;
+      border-radius: 25px;
+      padding: 8px 20px;
+      color: #009688;
+      background-color: transparent;
+      transition: background-color 0.3s, color 0.05s, transform 0.3s, box-shadow 0.3s;
+      box-shadow: none;
+    }
+
+    .say-hello:hover {
+      background-color: #009688;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .say-hello:active {
+      background-color: #009688;
+      color: white;
+      transform: translateY(1px);
+    }
+
+    .hamburger-menu {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      right: 40px;
+      z-index: 1001;
+      
+      border: 2px solid #009688;
+      border-radius: 8px;
+      padding: 6px 10px;
+    }
+
+    .hamburger-menu .bar {
+      width: 30px;
+      height: 3px;
+      background-color: #004d40;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    .mobile-nav {
+      height: auto;
+      width: 80%;
+      max-width: 300px;
+      position: fixed;
+      z-index: 1000;
+      top: 90px;
+      right: -100%;
+      left: auto;
+      transform: none;
+      background-color: #FFFFFF;
+      overflow-x: hidden;
+      transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .mobile-nav .mobile-link {
+      text-decoration: none;
+      font-size: 25px;
+      color: #004d40;
+      display: block;
+      transition: color 0.3s, transform 0.3s;
+      width: 100%;
+      text-align: center;
+      margin: 0 0 15px 0;
+      font-family: 'Montserrat', sans-serif;
+
+      background-image: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      height: auto;
+      padding: 15px 8px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .mobile-nav .mobile-link::after {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 27.802 206.816 85.578' preserveAspectRatio='xMidYMid meet' xmlns='http://www.w3.org/2000/svg'><path fill='%23000000' d='M188.97,27.802H17.847C8.006,27.802,0,35.815,0,45.666v49.852c0,9.851,8.006,17.864,17.847,17.864H188.97c9.841,0,17.846-8.013,17.846-17.864V45.666C206.817,35.815,198.811,27.802,188.97,27.802z M199.685,95.518c0,5.916-4.806,10.732-10.715,10.732H17.847c-5.909,0-10.715-4.816-10.715-10.732V45.666c0-5.916,4.806-10.732,10.715-10.732H188.97c5.909,0,10.715,4.816,10.715,10.732V95.518z'/><rect x='35.658' y='88.421' width='131.987' height='7.132' fill='%23009688'/><rect x='21.395' y='77.724' width='164.027' height='7.132' fill='%23009688'/></svg>");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 10px;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .mobile-nav .mobile-link:last-child {
+      margin-bottom: 0;
+    }
+
+    .mobile-nav .mobile-link:hover {
+      color: #009688;
+    }
+
+    .mobile-nav .mobile-link:active::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .mobile-nav .say-hello.mobile-link {
+      background-color: transparent;
+      color: #009688;
+      border: 2px solid #009688;
+      border-radius: 25px;
+      padding: 8px 20px;
+      box-shadow: none;
+      
+      background-image: none;
+      height: auto;
+      width: auto;
+
+      display: block;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .say-hello.nav-link::after,
+    .say-hello.mobile-link::after {
+      content: none;
+    }
+
+    .mobile-nav .say-hello.mobile-link:hover,
+    .mobile-nav .say-hello.mobile-link:active {
+      color: white;
+      background-color: #009688;
+      transform: translateY(-2px);
+    }
+
+
+    @media (min-width: 769px) {
+      .desktop-nav {
+        display: flex !important;
+        margin-left: auto;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-right: 4cm;
+        transform: translateY(0);
+      }
+      .desktop-nav .nav-link {
+        margin-right: 40px;
+      }
+      .desktop-nav .say-hello {
+        margin-right: 0;
+      }
+
+      .hamburger-menu {
+        display: none;
+      }
+      .mobile-nav {
+        display: none;
+      }
+
+      .logo-img {
+        height: 158px;
+        margin-left: 2.5cm;
+      }
+
+      .tv-screen {
+        width: 90%;
+        max-width: 900px;
+        height: calc(10cm + 4cm);
+        background-color: transparent;
+        border-radius: 15px;
+        z-index: 1;
+        margin: auto;
+        border: 5px solid #00CC66;
+      }
+
+      .tv-image-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .tv-image-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .tv-image-container img.active {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+      .hamburger-menu {
+        display: flex;
+        top: 68px;
+      }
+      .mobile-nav.open {
+        right: 0;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .mobile-nav .mobile-link {
+        font-size: 20px;
+        font-weight: normal;
+      }
+
+      .logo-img {
+        height: 128px;
+      }
+
+      .tv-screen {
+        width: 90%;
+        height: calc(150px + 8cm);
+        background-color: transparent;
+        border-radius: 15px;
+        z-index: 0;
+        margin: auto;
+        border: 5px solid #00CC66;
+      }
+
+      .tv-image-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .tv-image-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .tv-image-container img.active {
+        opacity: 1;
+      }
+
+      body {
+        background-image: url('./images/fondo1.png'); /* Adjusted to fondo1.png for mobile based on previous context */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+      }
+
+      .mobile-nav {
+        border: 2px solid #90EE90;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="w-full flex justify-between items-center relative">
+    <a href="./index.html" class="flex items-center"> <!-- Enlace del logo a la página de inicio -->
+      <img src="./images/logo.ico" alt="Logo" class="logo-img w-auto">
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="./servicios.html" class="nav-link">SERVICIOS</a> <!-- Enlace a la página Servicios -->
+      <a href="./nosotros.html" class="nav-link">NOSOTROS</a> <!-- Enlace a la página Nosotros -->
+      <a href="./contactanos.html" class="say-hello">CONTACTAR</a> <!-- Enlace a la página Contactanos -->
+    </nav>
+
+    <div class="hamburger-menu md:hidden" id="hamburgerMenu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
+
+  <main class="flex-grow flex items-center justify-center">
+    <div class="tv-screen">
+      <div class="tv-image-container">
+        <img id="tvImage1" src="./carrete/1.PNG" alt="Imagen de carrusel 1" class="active">
+        <img id="tvImage2" src="./carrete/2.PNG" alt="Imagen de carrusel 2">
+      </div>
+    </div>
+  </main>
+
+  <div id="mobileNav" class="mobile-nav">
+    <a href="./servicios.html" class="mobile-link">SERVICIOS</a>
+    <a href="./nosotros.html" class="mobile-link">NOSOTROS</a>
+    <a href="./contactanos.html" class="say-hello mobile-link">CONTACTAR</a>
+  </div>
+
+  <footer class="w-full py-4 text-center text-gray-700 text-sm">
+    <p>&copy; Ecoclima derechos reservados. Desarrollado por Byte <img src="./images/byte.ico" alt="Byte Logo" class="inline-block h-4 w-4 ml-1 align-middle"></p>
+  </footer>
+
+  <script>
+    function openNav() {
+      const mobileNav = document.getElementById("mobileNav");
+      mobileNav.style.visibility = 'visible';
+      mobileNav.style.opacity = '1';
+      mobileNav.style.right = "0";
+      document.getElementById("hamburgerMenu").style.display = "none";
+    }
+
+    function closeNav() {
+      const mobileNav = document.getElementById("mobileNav");
+      mobileNav.style.right = "-100%";
+      mobileNav.style.opacity = '0';
+      setTimeout(() => {
+        mobileNav.style.visibility = 'hidden';
+      }, 500);
+      document.getElementById("hamburgerMenu").style.display = "flex";
+    }
+
+    document.getElementById("hamburgerMenu").addEventListener("click", openNav);
+
+    document.addEventListener("click", function(event) {
+      const mobileNav = document.getElementById("mobileNav");
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+
+      if (
+        !mobileNav.contains(event.target) &&
+        !hamburgerMenu.contains(event.target) &&
+        mobileNav.style.visibility === 'visible'
+      ) {
+        closeNav();
+      }
+    });
+
+    const images = [
+      './carrete/1.PNG',
+      './carrete/2.PNG',
+      './carrete/3.PNG',
+      './carrete/4.PNG',
+      './carrete/5.jpeg' 
+    ];
+    let currentImageIndex = 0;
+    const tvImage1 = document.getElementById('tvImage1');
+    const tvImage2 = document.getElementById('tvImage2');
+
+    let activeImage = tvImage1;
+    let inactiveImage = tvImage2;
+    let carouselInterval;
+
+    function loadImage(imgElement, src, onLoadedCallback, onErrorCallback) {
+      const tempImg = new Image();
+      tempImg.onload = () => {
+        imgElement.src = src;
+        onLoadedCallback();
+      };
+      tempImg.onerror = () => {
+        onErrorCallback(src);
+      };
+      tempImg.src = src;
+    }
+
+    function initializeCarousel() {
+        loadImage(tvImage1, images[0], () => {
+            tvImage1.classList.add('active');
+            carouselInterval = setInterval(changeImage, 10000);
+        }, (failedSrc) => {
+            console.error(`Error al cargar la imagen inicial: ${failedSrc}. Usando marcador de posición.`);
+            tvImage1.src = `https://placehold.co/600x400/CCCCCC/000000?text=Error+Loading+Initial`;
+            tvImage1.classList.add('active');
+            carouselInterval = setInterval(changeImage, 10000);
+        });
+    }
+
+    function changeImage() {
+      activeImage.classList.remove('active');
+
+      let nextIndexCandidate = (currentImageIndex + 1) % images.length;
+      let nextImageSrcCandidate = images[nextIndexCandidate];
+
+      let triedSourcesInCycle = new Set();
+      triedSourcesInCycle.add(activeImage.src);
+      triedSourcesInCycle.add(nextImageSrcCandidate);
+
+      const findAndLoadNextImage = (currentAttemptSrc) => {
+        loadImage(inactiveImage, currentAttemptSrc, () => {
+          inactiveImage.classList.add('active');
+          const temp = activeImage;
+          activeImage = inactiveImage;
+          inactiveImage = temp;
+          currentImageIndex = images.indexOf(currentAttemptSrc);
+          if (currentImageIndex === -1) { 
+              console.warn("La imagen cargada no se encontró en el array de imágenes original. Esto es inesperado.");
+              currentImageIndex = 0;
+          }
+        }, (failedSrc) => {
+          console.error(`Error al cargar la imagen: ${failedSrc}.`);
+          
+          let foundAlternative = false;
+          let startSearchIndex = images.indexOf(failedSrc);
+          if (startSearchIndex === -1) startSearchIndex = currentImageIndex;
+
+          for (let i = 0; i < images.length; i++) {
+            let potentialAlternativeIndex = (startSearchIndex + 1 + i) % images.length;
+            let potentialAlternativeSrc = images[potentialAlternativeIndex];
+
+            if (!triedSourcesInCycle.has(potentialAlternativeSrc)) {
+              triedSourcesInCycle.add(potentialAlternativeSrc);
+              foundAlternative = true;
+              console.warn(`Intentando cargar imagen alternativa: ${potentialAlternativeSrc}`);
+              findAndLoadNextImage(potentialAlternativeSrc);
+              break;
+            }
+          }
+
+          if (!foundAlternative) {
+            console.error(`Todas las imágenes del carrusel fallaron al cargar. Usando marcador de posición.`);
+            if (activeImage) {
+                activeImage.classList.remove('active');
+            }
+            inactiveImage.src = `https://placehold.co/600x400/CCCCCC/000000?text=Error+Loading+Images`;
+            inactiveImage.classList.add('active');
+            clearInterval(carouselInterval);
+          }
+        });
+      };
+
+      findAndLoadNextImage(nextImageSrcCandidate);
+    }
+
+    initializeCarousel();
+
+    document.addEventListener('contextmenu', function(e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
