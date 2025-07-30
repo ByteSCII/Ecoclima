@@ -402,8 +402,9 @@
   <main class="flex-grow flex items-center justify-center">
     <div class="tv-screen">
       <div class="tv-image-container">
-        <img id="tvImage1" src="./carrete/1.PNG" alt="Imagen de carrusel 1" class="active">
-        <img id="tvImage2" src="./carrete/2.PNG" alt="Imagen de carrusel 2">
+        <!-- Asegura que las rutas iniciales de las imágenes también apunten a ./carrete/ -->
+        <img id="tvImage1" src="./carrete/1.png" alt="Imagen de carrusel 1" class="active">
+        <img id="tvImage2" src="./carrete/2.png" alt="Imagen de carrusel 2">
       </div>
     </div>
   </main>
@@ -452,12 +453,13 @@
       }
     });
 
+    // Se han actualizado las rutas de las imágenes para que apunten a la carpeta ./carrete/
     const images = [
-      './carrete/1.PNG',
-      './carrete/2.PNG',
-      './carrete/3.PNG',
-      './carrete/4.PNG',
-      './carrete/5.jpeg' 
+      './carrete/1.png',
+      './carrete/2.png',
+      './carrete/3.png',
+      './carrete/4.png',
+      './carrete/5.png'
     ];
     let currentImageIndex = 0;
     const tvImage1 = document.getElementById('tvImage1');
