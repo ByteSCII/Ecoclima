@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EcoClima Servicios</title>
+  <title>EcoClima Nosotros</title>
   <link rel="icon" href="./images/logo.ico" type="image/x-icon">
-  <meta name="description" content="Descubre los servicios de EcoClima: mantenimiento preventivo, predictivo y correctivo de aires acondicionados, reparaciones y asesoramiento experto para todas tus necesidades de climatización.">
-  <meta name="keywords" content="Ecoclima, servicios aires acondicionados, mantenimiento, reparación, climatización, servicios preventivos, servicios predictivos, servicios correctivos, asesoramiento climatización">
+  <meta name="description" content="Conoce al equipo de EcoClima: 9 jóvenes aprendices técnicos en refrigeración dedicados a ofrecer servicios de mantenimiento, reparación y asesoramiento en aires acondicionados.">
+  <meta name="keywords" content="Ecoclima, nosotros, equipo, aprendices, técnicos refrigeración, aire acondicionado, mantenimiento, reparación, servicios, climatización">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -25,7 +25,6 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-position: center center;
-      
       font-family: 'Inter', Arial, sans-serif;
       overflow-x: hidden; /* Prevent horizontal scroll */
     }
@@ -52,7 +51,6 @@
       letter-spacing: normal;
       transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
       font-family: 'Montserrat', sans-serif;
-      
       background-image: none;
       border: none;
       border-radius: 0;
@@ -60,7 +58,6 @@
       box-shadow: none;
       height: auto;
       width: auto;
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -91,13 +88,9 @@
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    .nav-link:hover {
-      color: #009688;
-      transform: translateY(-2px);
-    }
-
-    .nav-link:active {
-      transform: translateY(1px);
+    .nav-link:hover::after {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     .say-hello {
@@ -129,7 +122,6 @@
       position: absolute;
       right: 40px;
       z-index: 1001;
-      
       border: 2px solid #009688;
       border-radius: 8px;
       padding: 6px 10px;
@@ -161,10 +153,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      
       opacity: 0;
       visibility: hidden;
     }
@@ -179,14 +169,12 @@
       text-align: center;
       margin: 0 0 15px 0;
       font-family: 'Montserrat', sans-serif;
-
       background-image: none;
       border: none;
       border-radius: 0;
       box-shadow: none;
       height: auto;
       padding: 15px 8px;
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -228,11 +216,9 @@
       border-radius: 25px;
       padding: 8px 20px;
       box-shadow: none;
-      
       background-image: none;
       height: auto;
       width: auto;
-
       display: block;
       justify-content: center;
       align-items: center;
@@ -250,43 +236,65 @@
       transform: translateY(-2px);
     }
 
-    /* Carousel styles (copied from index.html) */
-    .tv-screen {
-      width: 90%;
-      max-width: 900px;
-      height: 400px; /* Adjusted height for better visibility */
-      background-color: transparent;
-      border-radius: 15px;
-      z-index: 1;
-      margin: auto;
-      border: 5px solid #00CC66;
-      position: relative; /* Needed for absolute positioning of images */
-      overflow: hidden; /* Ensures images are clipped to border-radius */
+    /* Gallery styles */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .tv-image-container {
+    .gallery-item {
+      background-color: #F8FAFC; /* Very light grey */
+      border: 2px solid #CBD5E1; /* Medium grey */
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 1rem;
+    }
+
+    .gallery-image-wrapper {
       position: relative;
       width: 100%;
-      height: 100%;
-      border-radius: 15px;
+      padding-top: 75%; /* 4:3 Aspect Ratio (height / width * 100) */
       overflow: hidden;
+      border-radius: 8px;
     }
 
-    .tv-image-container img {
+    .gallery-image-wrapper img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 15px;
-      opacity: 0;
       transition: opacity 1s ease-in-out;
     }
-    .tv-image-container img.active {
+
+    .gallery-image-wrapper img.active {
       opacity: 1;
     }
 
+    .gallery-item h3 {
+      font-size: 1.25rem; /* text-xl */
+      font-weight: bold;
+      color: #334155; /* Darker grey-blue */
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .gallery-item p {
+      color: #475569; /* Darker grey-blue for readability */
+      text-align: center;
+      padding: 0 1rem 1rem;
+    }
 
     @media (min-width: 769px) {
       .desktop-nav {
@@ -340,11 +348,6 @@
         height: 128px;
       }
 
-      .tv-screen {
-        width: 90%;
-        height: 250px; /* Adjusted height for mobile carousel */
-      }
-
       body {
         background-image: url('./images/fondo.png'); /* Fondo para móvil */
         background-size: cover;
@@ -356,76 +359,6 @@
       .mobile-nav {
         border: 2px solid #90EE90;
       }
-    }
-
-    /* Estilos para el contenedor de cada servicio */
-    .service-item-container {
-      background-color: #F0FDF4; /* Very light green, almost white */
-      border: 2px solid #34D399; /* Emerald green */
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-top: 2rem; /* Margen superior para separarlo del texto */
-      margin-bottom: 3rem; /* Margen inferior */
-      overflow: hidden; /* Asegura que el borde redondeado se aplique correctamente */
-    }
-
-    .service-item-container .service-text-content {
-      padding: 20px;
-    }
-
-    .service-item-container .service-image-content {
-      padding: 10px; /* Pequeño padding alrededor de la imagen */
-    }
-
-    .service-item-container h3 {
-      font-size: 2rem; /* text-3xl */
-      font-weight: bold;
-      color: #047857; /* Darker green */
-      text-align: center;
-      margin-bottom: 1.5rem; /* mb-6 */
-    }
-
-    .service-item-container .detail-section {
-      margin-bottom: 1.5rem; /* Espacio entre secciones */
-    }
-
-    .service-item-container .detail-section:last-child {
-      margin-bottom: 0;
-    }
-
-    .service-item-container .detail-section h4 {
-      font-size: 1.5rem; /* text-2xl */
-      font-weight: semibold;
-      color: #059669; /* Medium green */
-      margin-bottom: 0.5rem; /* mb-2 */
-      display: flex;
-      align-items: center;
-      cursor: pointer; /* Para indicar que es clickeable */
-    }
-
-    .service-item-container .detail-section h4 .toggle-icon {
-      font-size: 1.5rem;
-      margin-left: 10px;
-      transition: transform 0.3s ease;
-      color: #059669; /* Same as accordion header */
-    }
-
-    .service-item-container .detail-section h4.active .toggle-icon {
-      transform: rotate(180deg); /* Rota la flecha hacia arriba cuando está abierto */
-    }
-
-    .service-item-container .detail-section p {
-      color: #4B5563; /* Darker gray for readability */
-      line-height: 1.6;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-      padding-top: 0;
-    }
-
-    .service-item-container .detail-section p.open {
-      max-height: 200px; /* Ajustar según la longitud del texto */
-      padding-top: 10px;
     }
   </style>
 </head>
@@ -448,127 +381,72 @@
     </div>
   </header>
 
-  <main class="flex-grow flex flex-col items-center pt-0"> <!-- Adjusted main for top alignment and padding -->
-    <div class="tv-screen">
-      <div class="tv-image-container">
-        <img id="tvImage1" src="./servicios/servicios.png" alt="Imagen de carrusel de servicios 1" class="active">
-        <img id="tvImage2" src="./servicios/servicios.png" alt="Imagen de carrusel de servicios 2">
-      </div>
-    </div>
-
-    <!-- Texto sobre los servicios -->
+  <main class="flex-grow flex flex-col items-center pt-0">
     <section class="w-full max-w-4xl text-center px-4 mt-8 mb-12">
-      <h2 class="text-3xl font-semibold text-gray-700 mb-4">Nuestros Servicios Integrales de Climatización</h2>
+      <h2 class="text-3xl font-semibold text-gray-700 mb-4">Sobre Nosotros</h2>
       <p class="text-lg text-gray-600 leading-relaxed">
-        En EcoClima, ofrecemos un servicio completo para todas tus necesidades de climatización. Desde el mantenimiento preventivo, predictivo y correctivo, hasta la instalación de aires acondicionados Split y la reparación y cambio de piezas. Nuestro compromiso es asegurar tu confort y la eficiencia energética de tus sistemas, brindándote soluciones sostenibles y de alta calidad.
+        Somos EcoClima, un equipo de 9 jóvenes aprendices técnicos en refrigeración, apasionados por el mundo de la climatización. Nos dedicamos a ofrecer servicios de mantenimiento, reparación y asesoramiento en aires acondicionados, siempre con un enfoque en la calidad y la eficiencia.
       </p>
-      <!-- Nueva sección para "Cómo lo ofrecemos" de forma general -->
       <div class="mt-8">
-        <h3 class="text-2xl font-bold text-gray-800 mb-2">CÓMO LO OFRECEMOS</h3>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">Nuestra Misión</h3>
         <p class="text-lg text-gray-600 leading-relaxed">
-          Hacemos un asesoramiento con nuestros clientes en tiempo real para saber sus preguntas y sus necesidades, además también revisamos el equipo que necesita ser reparado y le ofrecemos lo mejor para su arreglo.
+          Proporcionar soluciones integrales de climatización, garantizando el confort y bienestar de nuestros clientes a través de servicios de mantenimiento y reparación eficientes, sostenibles y de alta calidad.
+        </p>
+      </div>
+      <div class="mt-8">
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">Nuestra Visión</h3>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Ser la empresa líder en servicios de climatización, reconocida por nuestra excelencia técnica, innovación y compromiso con el medio ambiente, contribuyendo a un futuro más fresco y sostenible para todos.
         </p>
       </div>
     </section>
 
-    <!-- Contenedor para todos los servicios individuales -->
+    <!-- Sección de la galería de imágenes -->
     <section class="w-full max-w-6xl px-4 flex flex-col items-center">
-
-      <!-- Servicio: Mantenimiento Preventivo -->
-      <div class="service-item-container flex flex-col md:flex-row w-full mb-8">
-          <div class="md:w-1/2 service-text-content">
-              <h3>MANTENIMIENTO PREVENTIVO</h3>
-              <div class="detail-section">
-                  <h4 class="accordion-header" data-target="queEsContent_mantenimiento_preventivo">
-                      QUE ES
-                      <span class="toggle-icon">&#x25BC;</span> <!-- Flecha hacia abajo -->
-                  </h4>
-                  <p id="queEsContent_mantenimiento_preventivo" class="accordion-content">
-                      El mantenimiento preventivo de aires acondicionados es un conjunto de acciones programadas para asegurar el funcionamiento óptimo y prolongar la vida útil de los equipos. Incluye la limpieza profunda de filtros y componentes internos, la revisión de niveles de refrigerante, la verificación de conexiones eléctricas y el ajuste de parámetros de operación. Su objetivo principal es anticipar y evitar fallas, optimizar el consumo de energía y garantizar la calidad del aire interior, reduciendo la necesidad de reparaciones costosas.
-                  </p>
-              </div>
+      <h2 class="text-3xl font-semibold text-gray-700 mb-8">Conoce a Nuestro Equipo</h2>
+      <div class="gallery-container">
+        <!-- Los elementos de la galería se generarán dinámicamente con JavaScript -->
+        <div class="gallery-item">
+          <div class="gallery-image-wrapper">
+            <img class="active" src="./Nosotros/1.jpeg" alt="Miembro del equipo de EcoClima 1">
+            <img class="" src="./Nosotros/2.jpeg" alt="Miembro del equipo de EcoClima 2">
           </div>
-          <div class="md:w-1/2 flex items-center justify-center service-image-content">
-              <img src="./servicios/mantenimiento-preventivo.png" alt="Imagen de Mantenimiento Preventivo" class="rounded-lg w-full h-auto object-cover">
+          <h3>Miembro del Equipo 1</h3>
+          <p>Especialista en mantenimiento preventivo.</p>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image-wrapper">
+            <img class="active" src="./Nosotros/3.jpeg" alt="Miembro del Equipo de EcoClima 3">
+            <img class="" src="./Nosotros/4.jpeg" alt="Miembro del Equipo de EcoClima 4">
           </div>
+          <h3>Miembro del Equipo 2</h3>
+          <p>Experto en reparación de sistemas Split.</p>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image-wrapper">
+            <img class="active" src="./Nosotros/5.jpeg" alt="Miembro del Equipo de EcoClima 5">
+            <img class="" src="./Nosotros/6.jpeg" alt="Miembro del Equipo de EcoClima 6">
+          </div>
+          <h3>Miembro del Equipo 3</h3>
+          <p>Técnico en instalación y eficiencia energética.</p>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image-wrapper">
+            <img class="active" src="./Nosotros/7.jpeg" alt="Miembro del Equipo de EcoClima 7">
+            <img class="" src="./Nosotros/8.jpeg" alt="Miembro del Equipo de EcoClima 8">
+          </div>
+          <h3>Miembro del Equipo 4</h3>
+          <p>Especialista en diagnóstico y solución de problemas.</p>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-image-wrapper">
+            <img class="active" src="./Nosotros/9.jpeg" alt="Miembro del Equipo de EcoClima 9">
+            <img class="" src="./Nosotros/10.jpeg" alt="Miembro del Equipo de EcoClima 10">
+          </div>
+          <h3>Miembro del Equipo 5</h3>
+          <p>Asesor en climatización y nuevas tecnologías.</p>
+        </div>
       </div>
-
-      <!-- Servicio: Mantenimiento Predictivo -->
-      <div class="service-item-container flex flex-col md:flex-row-reverse w-full mb-8">
-          <div class="md:w-1/2 service-text-content">
-              <h3>MANTENIMIENTO PREDICTIVO</h3>
-              <div class="detail-section">
-                  <h4 class="accordion-header" data-target="queEsContent_mantenimiento_predictivo">
-                      QUE ES
-                      <span class="toggle-icon">&#x25BC;</span> <!-- Flecha hacia abajo -->
-                  </h4>
-                  <p id="queEsContent_mantenimiento_predictivo" class="accordion-content">
-                      El mantenimiento predictivo se basa en el monitoreo constante y el análisis de datos de tus equipos de aire acondicionado. Utilizamos tecnología avanzada para detectar patrones y anomalías que puedan indicar un posible fallo en el futuro. Esto nos permite anticiparnos a los problemas y programar intervenciones antes de que se conviertan en averías mayores.
-                  </p>
-              </div>
-          </div>
-          <div class="md:w-1/2 flex items-center justify-center service-image-content">
-              <img src="./servicios/mantenimiento-predictivo.png" alt="Imagen de Mantenimiento Predictivo" class="rounded-lg w-full h-auto object-cover">
-          </div>
-      </div>
-
-      <!-- Servicio: Mantenimiento Correctivo -->
-      <div class="service-item-container flex flex-col md:flex-row w-full mb-8">
-          <div class="md:w-1/2 service-text-content">
-              <h3>MANTENIMIENTO CORRECTIVO</h3>
-              <div class="detail-section">
-                  <h4 class="accordion-header" data-target="queEsContent_mantenimiento_correctivo">
-                      QUE ES
-                      <span class="toggle-icon">&#x25BC;</span> <!-- Flecha hacia abajo -->
-                  </h4>
-                  <p id="queEsContent_mantenimiento_correctivo" class="accordion-content">
-                      El mantenimiento correctivo se activa cuando tu equipo de aire acondicionado presenta una falla o avería inesperada. Nuestro servicio se enfoca en el diagnóstico rápido y la reparación eficiente del problema para restaurar el funcionamiento normal de tu sistema lo antes posible.
-                  </p>
-              </div>
-          </div>
-          <div class="md:w-1/2 flex items-center justify-center service-image-content">
-              <img src="./servicios/mantenimiento-correctivo.png" alt="Imagen de Mantenimiento Correctivo" class="rounded-lg w-full h-auto object-cover">
-          </div>
-      </div>
-
-      <!-- Servicio: Instalación de Aires Acondicionados Split -->
-      <div class="service-item-container flex flex-col md:flex-row-reverse w-full mb-8">
-          <div class="md:w-1/2 service-text-content">
-              <h3>INSTALACIÓN DE AIRES ACONDICIONADOS SPLIT</h3>
-              <div class="detail-section">
-                  <h4 class="accordion-header" data-target="queEsContent_instalacion">
-                      QUE ES
-                      <span class="toggle-icon">&#x25BC;</span> <!-- Flecha hacia abajo -->
-                  </h4>
-                  <p id="queEsContent_instalacion" class="accordion-content">
-                      Este servicio se enfoca en la instalación profesional de sistemas de aire acondicionado tipo Split. Nos encargamos de todo el proceso, desde la evaluación inicial del espacio para determinar la ubicación óptima de la unidad interior y exterior, hasta la conexión de tuberías, cableado eléctrico y la puesta en marcha del equipo.
-                  </p>
-              </div>
-          </div>
-          <div class="md:w-1/2 flex items-center justify-center service-image-content">
-              <img src="./servicios/instalacion-split.png" alt="Imagen de Instalación de Aires Acondicionados Split" class="rounded-lg w-full h-auto object-cover">
-          </div>
-      </div>
-
-      <!-- Servicio: Reparación y Cambio de Pieza -->
-      <div class="service-item-container flex flex-col md:flex-row w-full mb-8">
-          <div class="md:w-1/2 service-text-content">
-              <h3>REPARACIÓN Y CAMBIO DE PIEZA</h3>
-              <div class="detail-section">
-                  <h4 class="accordion-header" data-target="queEsContent_reparacion_pieza">
-                      QUE ES
-                      <span class="toggle-icon">&#x25BC;</span> <!-- Flecha hacia abajo -->
-                  </h4>
-                  <p id="queEsContent_reparacion_pieza" class="accordion-content">
-                      Este servicio se dedica a la identificación y solución de fallas específicas en tu equipo de aire acondicionado, incluyendo el reemplazo de componentes defectuosos. Ya sea un compresor, un motor de ventilador, una tarjeta electrónica o cualquier otra pieza, nuestro objetivo es restaurar la funcionalidad completa de tu sistema.
-                  </p>
-              </div>
-          </div>
-          <div class="md:w-1/2 flex items-center justify-center service-image-content">
-              <img src="./servicios/reparacion-piezas.png" alt="Imagen de Reparación y Cambio de Pieza" class="rounded-lg w-full h-auto object-cover">
-          </div>
-      </div>
-
     </section>
   </main>
 
@@ -616,131 +494,82 @@
       }
     });
 
-    // Carousel logic (copied from index.html, adjusted for placeholder images)
-    const images = [
-      './servicios/servicios.png'
-    ];
-    let currentImageIndex = 0;
-    const tvImage1 = document.getElementById('tvImage1');
-    const tvImage2 = document.getElementById('tvImage2');
+    // Lógica de la galería de imágenes
+    const galleryImageSlots = document.querySelectorAll('.gallery-item .gallery-image-wrapper');
+    const allImages = Array.from({ length: 10 }, (_, i) => `./Nosotros/${i + 1}.jpeg`); // Genera 1.jpeg a 10.jpeg
+    let shuffledImagesPool = [];
+    let currentPoolIndex = 0;
 
-    let activeImage = tvImage1;
-    let inactiveImage = tvImage2;
-    let carouselInterval;
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
 
-    function loadImage(imgElement, src, onLoadedCallback, onErrorCallback) {
+    function replenishPool() {
+      shuffledImagesPool = shuffleArray([...allImages]);
+      currentPoolIndex = 0;
+    }
+
+    function loadImageForGallerySlot(slot, src, altText) {
+      const activeImg = slot.querySelector('img.active');
+      const inactiveImg = slot.querySelector('img:not(.active)');
+
       const tempImg = new Image();
       tempImg.onload = () => {
-        imgElement.src = src;
-        onLoadedCallback();
+        inactiveImg.src = src;
+        inactiveImg.alt = altText;
+        activeImg.classList.remove('active');
+        inactiveImg.classList.add('active');
       };
       tempImg.onerror = () => {
-        onErrorCallback(src);
+        console.error(`Error al cargar la imagen de la galería: ${src}. Usando marcador de posición.`);
+        inactiveImg.src = `https://placehold.co/300x225/CCCCCC/000000?text=Error+Loading`;
+        inactiveImg.alt = `Error al cargar la imagen`;
+        activeImg.classList.remove('active');
+        inactiveImg.classList.add('active');
       };
       tempImg.src = src;
     }
 
-    function initializeCarousel() {
-        loadImage(tvImage1, images[0], () => {
-            tvImage1.classList.add('active');
-            carouselInterval = setInterval(changeImage, 10000);
-        }, (failedSrc) => {
-            console.error(`Error al cargar la imagen inicial: ${failedSrc}. Usando marcador de posición.`);
-            tvImage1.src = `https://placehold.co/600x400/CCCCCC/000000?text=Error+Loading+Initial`;
-            tvImage1.classList.add('active');
-            carouselInterval = setInterval(changeImage, 10000);
-        });
+    function updateGallery() {
+      if (shuffledImagesPool.length - currentPoolIndex < galleryImageSlots.length) {
+        replenishPool();
+      }
+
+      galleryImageSlots.forEach((slot) => {
+        const newSrc = shuffledImagesPool[currentPoolIndex];
+        const match = newSrc.match(/(\d+)\.jpeg$/);
+        const imageNumber = match ? match[1] : (currentPoolIndex + 1);
+        const newAltText = `Miembro del equipo de EcoClima ${imageNumber}`;
+        
+        loadImageForGallerySlot(slot, newSrc, newAltText);
+        currentPoolIndex = (currentPoolIndex + 1) % shuffledImagesPool.length;
+      });
     }
 
-    function changeImage() {
-      activeImage.classList.remove('active');
+    replenishPool(); // Initial shuffle and fill
+    galleryImageSlots.forEach((slot, index) => {
+        const initialSrc = shuffledImagesPool[currentPoolIndex];
+        const match = initialSrc.match(/(\d+)\.jpeg$/);
+        const imageNumber = match ? match[1] : (currentPoolIndex + 1);
+        const initialAltText = `Miembro del equipo de EcoClima ${imageNumber}`;
 
-      let nextIndexCandidate = (currentImageIndex + 1) % images.length;
-      let nextImageSrcCandidate = images[nextIndexCandidate];
+        slot.querySelector('img:not(.active)').src = initialSrc; // Load into inactive first
+        slot.querySelector('img:not(.active)').alt = initialAltText;
+        slot.querySelector('img:not(.active)').classList.add('active'); // Make it active
+        
+        currentPoolIndex = (currentPoolIndex + 1) % shuffledImagesPool.length;
+    });
 
-      let triedSourcesInCycle = new Set();
-      triedSourcesInCycle.add(activeImage.src);
-      triedSourcesInCycle.add(nextImageSrcCandidate);
-
-      const findAndLoadNextImage = (currentAttemptSrc) => {
-        loadImage(inactiveImage, currentAttemptSrc, () => {
-          inactiveImage.classList.add('active');
-          const temp = activeImage;
-          activeImage = inactiveImage;
-          inactiveImage = temp;
-          currentImageIndex = images.indexOf(currentAttemptSrc);
-          if (currentImageIndex === -1) { 
-              console.warn("La imagen cargada no se encontró en el array de imágenes original. Esto es inesperado.");
-              currentImageIndex = 0;
-          }
-        }, (failedSrc) => {
-          console.error(`Error al cargar la imagen: ${failedSrc}.`);
-          
-          let foundAlternative = false;
-          let startSearchIndex = images.indexOf(failedSrc);
-          if (startSearchIndex === -1) startSearchIndex = currentImageIndex;
-
-          for (let i = 0; i < images.length; i++) {
-            let potentialAlternativeIndex = (startSearchIndex + 1 + i) % images.length;
-            let potentialAlternativeSrc = images[potentialAlternativeIndex];
-
-            if (!triedSourcesInCycle.has(potentialAlternativeSrc)) {
-              triedSourcesInCycle.add(potentialAlternativeSrc);
-              foundAlternative = true;
-              console.warn(`Intentando cargar imagen alternativa: ${potentialAlternativeSrc}`);
-              findAndLoadNextImage(potentialAlternativeSrc);
-              break;
-            }
-          }
-
-          if (!foundAlternative) {
-            console.error(`Todas las imágenes del carrusel fallaron al cargar. Usando marcador de posición.`);
-            if (activeImage) {
-                activeImage.classList.remove('active');
-            }
-            inactiveImage.src = `https://placehold.co/600x400/CCCCCC/000000?text=Error+Loading+Images`;
-            inactiveImage.classList.add('active');
-            clearInterval(carouselInterval);
-          }
-        });
-      };
-
-      findAndLoadNextImage(nextImageSrcCandidate);
-    }
-
-    initializeCarousel();
+    setInterval(updateGallery, 10000); // Change image every 10 seconds
 
     document.addEventListener('contextmenu', function(e) {
       if (e.target.tagName === 'IMG') {
         e.preventDefault();
       }
-    });
-
-    // Lógica para el acordeón de servicios individuales
-    document.querySelectorAll('.service-item-container .accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const targetId = header.dataset.target;
-        const content = document.getElementById(targetId);
-        const icon = header.querySelector('.toggle-icon');
-
-        // Cierra los otros contenidos de la misma caja de servicio
-        header.closest('.service-item-container').querySelectorAll('.accordion-content.open').forEach(openContent => {
-          if (openContent.id !== targetId) {
-            openContent.classList.remove('open');
-            openContent.previousElementSibling.querySelector('.toggle-icon').innerHTML = '&#x25BC;'; // Flecha hacia abajo
-            openContent.previousElementSibling.classList.remove('active');
-          }
-        });
-
-        // Abre o cierra el contenido actual
-        content.classList.toggle('open');
-        header.classList.toggle('active'); // Para rotar el icono
-        if (content.classList.contains('open')) {
-          icon.innerHTML = '&#x25B2;'; // Flecha hacia arriba
-        } else {
-          icon.innerHTML = '&#x25BC;'; // Flecha hacia abajo
-        }
-      });
     });
   </script>
 </body>
