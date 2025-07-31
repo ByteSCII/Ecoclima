@@ -431,15 +431,11 @@
 </head>
 <body>
   <header class="w-full flex justify-between items-center relative">
-    <a href="./index.html" class="flex items-center"> <!-- Enlace del logo a la página de inicio -->
-      <img src="./images/logo.ico" alt="Logo" class="logo-img w-auto">
+    <a href="./index.html" class="flex items-center"> <img src="./images/logo.ico" alt="Logo" class="logo-img w-auto">
     </a>
 
     <nav class="desktop-nav">
-      <a href="./servicios.html" class="nav-link">SERVICIOS</a> <!-- Enlace a la página Servicios -->
-      <a href="./nosotros.html" class="nav-link">NOSOTROS</a> <!-- Enlace a la página Nosotros -->
-      <a href="./contactanos.html" class="say-hello">CONTACTAR</a> <!-- Enlace a la página Contactanos -->
-    </nav>
+      <a href="./servicios.html" class="nav-link">SERVICIOS</a> <a href="./nosotros.html" class="nav-link">NOSOTROS</a> <a href="./contactanos.html" class="say-hello">CONTACTAR</a> </nav>
 
     <div class="hamburger-menu md:hidden" id="hamburgerMenu">
       <div class="bar"></div>
@@ -448,21 +444,18 @@
     </div>
   </header>
 
-  <main class="flex-grow flex flex-col items-center pt-0"> <!-- Adjusted main for top alignment and padding -->
-    <div class="tv-screen">
+  <main class="flex-grow flex flex-col items-center pt-0"> <div class="tv-screen">
       <div class="tv-image-container">
-        <img id="tvImage1" src="./servicios/servicios.png" alt="Imagen de carrusel de servicios 1" class="active">
-        <img id="tvImage2" src="./servicios/servicios.png" alt="Imagen de carrusel de servicios 2">
+        <img id="tvImage1" src="./servicios/servicios.PNG" alt="Imagen de carrusel de servicios 1" class="active">
+        <img id="tvImage2" src="./servicios/servicios.PNG" alt="Imagen de carrusel de servicios 2">
       </div>
     </div>
 
-    <!-- Texto sobre los servicios -->
     <section class="w-full max-w-4xl text-center px-4 mt-8 mb-12">
       <h2 class="text-3xl font-semibold text-gray-700 mb-4">Nuestros Servicios Integrales de Climatización</h2>
       <p class="text-lg text-gray-600 leading-relaxed">
         En EcoClima, ofrecemos un servicio completo para todas tus necesidades de climatización. Desde el mantenimiento preventivo, predictivo y correctivo, hasta la instalación de aires acondicionados Split y la reparación y cambio de piezas. Nuestro compromiso es asegurar tu confort y la eficiencia energética de tus sistemas, brindándote soluciones sostenibles y de alta calidad.
       </p>
-      <!-- Nueva sección para "Cómo lo ofrecemos" de forma general -->
       <div class="mt-8">
         <h3 class="text-2xl font-bold text-gray-800 mb-2">CÓMO LO OFRECEMOS</h3>
         <p class="text-lg text-gray-600 leading-relaxed">
@@ -471,101 +464,90 @@
       </div>
     </section>
 
-    <!-- Contenedor para todos los servicios individuales -->
     <section class="w-full max-w-6xl px-4 flex flex-col items-center">
 
-      <!-- Servicio: Mantenimiento Preventivo -->
       <div class="service-item-container flex flex-col md:flex-row w-full mb-8">
           <div class="md:w-1/2 service-text-content">
               <h3>MANTENIMIENTO PREVENTIVO</h3>
               <div class="detail-section">
                   <h4 class="accordion-header" data-target="queEsContent_mantenimiento_preventivo">
                       QUE ES
-                      <span class="toggle-icon">&#x25BC;</span> <!-- Flecha hacia abajo -->
-                  </h4>
+                      <span class="toggle-icon">&#x25BC;</span> </h4>
                   <p id="queEsContent_mantenimiento_preventivo" class="accordion-content">
                       El mantenimiento preventivo de aires acondicionados es un conjunto de acciones programadas para asegurar el funcionamiento óptimo y prolongar la vida útil de los equipos. Incluye la limpieza profunda de filtros y componentes internos, la revisión de niveles de refrigerante, la verificación de conexiones eléctricas y el ajuste de parámetros de operación. Su objetivo principal es anticipar y evitar fallas, optimizar el consumo de energía y garantizar la calidad del aire interior, reduciendo la necesidad de reparaciones costosas.
                   </p>
               </div>
           </div>
           <div class="md:w-1/2 flex items-center justify-center service-image-content">
-              <img src="./servicios/mantenimiento-preventivo.png" alt="Imagen de Mantenimiento Preventivo" class="rounded-lg w-full h-auto object-cover">
+              <img src="./servicios/mantenimiento-preventivo.PNG" alt="Imagen de Mantenimiento Preventivo" class="rounded-lg w-full h-auto object-cover">
           </div>
       </div>
 
-      <!-- Servicio: Mantenimiento Predictivo -->
       <div class="service-item-container flex flex-col md:flex-row-reverse w-full mb-8">
           <div class="md:w-1/2 service-text-content">
               <h3>MANTENIMIENTO PREDICTIVO</h3>
               <div class="detail-section">
                   <h4 class="accordion-header" data-target="queEsContent_mantenimiento_predictivo">
                       QUE ES
-                      <span class="toggle-icon">&#x25BC;</span> <!-- Flecha hacia abajo -->
-                  </h4>
+                      <span class="toggle-icon">&#x25BC;</span> </h4>
                   <p id="queEsContent_mantenimiento_predictivo" class="accordion-content">
                       El mantenimiento predictivo se basa en el monitoreo constante y el análisis de datos de tus equipos de aire acondicionado. Utilizamos tecnología avanzada para detectar patrones y anomalías que puedan indicar un posible fallo en el futuro. Esto nos permite anticiparnos a los problemas y programar intervenciones antes de que se conviertan en averías mayores.
                   </p>
               </div>
           </div>
           <div class="md:w-1/2 flex items-center justify-center service-image-content">
-              <img src="./servicios/mantenimiento-predictivo.png" alt="Imagen de Mantenimiento Predictivo" class="rounded-lg w-full h-auto object-cover">
+              <img src="./servicios/mantenimiento-predictivo.PNG" alt="Imagen de Mantenimiento Predictivo" class="rounded-lg w-full h-auto object-cover">
           </div>
       </div>
 
-      <!-- Servicio: Mantenimiento Correctivo -->
       <div class="service-item-container flex flex-col md:flex-row w-full mb-8">
           <div class="md:w-1/2 service-text-content">
               <h3>MANTENIMIENTO CORRECTIVO</h3>
               <div class="detail-section">
                   <h4 class="accordion-header" data-target="queEsContent_mantenimiento_correctivo">
                       QUE ES
-                      <span class="toggle-icon">&#x25BC;</span> <!-- Flecha hacia abajo -->
-                  </h4>
+                      <span class="toggle-icon">&#x25BC;</span> </h4>
                   <p id="queEsContent_mantenimiento_correctivo" class="accordion-content">
                       El mantenimiento correctivo se activa cuando tu equipo de aire acondicionado presenta una falla o avería inesperada. Nuestro servicio se enfoca en el diagnóstico rápido y la reparación eficiente del problema para restaurar el funcionamiento normal de tu sistema lo antes posible.
                   </p>
               </div>
           </div>
           <div class="md:w-1/2 flex items-center justify-center service-image-content">
-              <img src="./servicios/mantenimiento-correctivo.png" alt="Imagen de Mantenimiento Correctivo" class="rounded-lg w-full h-auto object-cover">
+              <img src="./servicios/mantenimiento-correctivo.PNG" alt="Imagen de Mantenimiento Correctivo" class="rounded-lg w-full h-auto object-cover">
           </div>
       </div>
 
-      <!-- Servicio: Instalación de Aires Acondicionados Split -->
       <div class="service-item-container flex flex-col md:flex-row-reverse w-full mb-8">
           <div class="md:w-1/2 service-text-content">
               <h3>INSTALACIÓN DE AIRES ACONDICIONADOS SPLIT</h3>
               <div class="detail-section">
                   <h4 class="accordion-header" data-target="queEsContent_instalacion">
                       QUE ES
-                      <span class="toggle-icon">&#x25BC;</span> <!-- Flecha hacia abajo -->
-                  </h4>
+                      <span class="toggle-icon">&#x25BC;</span> </h4>
                   <p id="queEsContent_instalacion" class="accordion-content">
                       Este servicio se enfoca en la instalación profesional de sistemas de aire acondicionado tipo Split. Nos encargamos de todo el proceso, desde la evaluación inicial del espacio para determinar la ubicación óptima de la unidad interior y exterior, hasta la conexión de tuberías, cableado eléctrico y la puesta en marcha del equipo.
                   </p>
               </div>
           </div>
           <div class="md:w-1/2 flex items-center justify-center service-image-content">
-              <img src="./servicios/instalacion-split.png" alt="Imagen de Instalación de Aires Acondicionados Split" class="rounded-lg w-full h-auto object-cover">
+              <img src="./servicios/instalacion-split.PNG" alt="Imagen de Instalación de Aires Acondicionados Split" class="rounded-lg w-full h-auto object-cover">
           </div>
       </div>
 
-      <!-- Servicio: Reparación y Cambio de Pieza -->
       <div class="service-item-container flex flex-col md:flex-row w-full mb-8">
           <div class="md:w-1/2 service-text-content">
               <h3>REPARACIÓN Y CAMBIO DE PIEZA</h3>
               <div class="detail-section">
                   <h4 class="accordion-header" data-target="queEsContent_reparacion_pieza">
                       QUE ES
-                      <span class="toggle-icon">&#x25BC;</span> <!-- Flecha hacia abajo -->
-                  </h4>
+                      <span class="toggle-icon">&#x25BC;</span> </h4>
                   <p id="queEsContent_reparacion_pieza" class="accordion-content">
                       Este servicio se dedica a la identificación y solución de fallas específicas en tu equipo de aire acondicionado, incluyendo el reemplazo de componentes defectuosos. Ya sea un compresor, un motor de ventilador, una tarjeta electrónica o cualquier otra pieza, nuestro objetivo es restaurar la funcionalidad completa de tu sistema.
                   </p>
               </div>
           </div>
           <div class="md:w-1/2 flex items-center justify-center service-image-content">
-              <img src="./servicios/reparacion-piezas.png" alt="Imagen de Reparación y Cambio de Pieza" class="rounded-lg w-full h-auto object-cover">
+              <img src="./servicios/reparacion-piezas.PNG" alt="Imagen de Reparación y Cambio de Pieza" class="rounded-lg w-full h-auto object-cover">
           </div>
       </div>
 
@@ -618,7 +600,7 @@
 
     // Carousel logic (copied from index.html, adjusted for placeholder images)
     const images = [
-      './servicios/servicios.png'
+      './servicios/servicios.PNG'
     ];
     let currentImageIndex = 0;
     const tvImage1 = document.getElementById('tvImage1');
